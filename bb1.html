@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qcf</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="umm.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="umm1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="umm2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="data:application/manifest+json,{}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #2d3748;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .external-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #f43f5e;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .external-button:hover {
+            background-color: #e11d48;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #2d3748;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #f43f5e;
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1.2rem;
+            color: #2d3748;
+            padding-left: 0.5rem;
+            border-left: 4px solid #f43f5e;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        strong {
+            color: #2d3748;
+            font-weight: 500;
+        }
+
+        em {
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        .section {
+            background-color: #fff1f2;
+            padding: 1.8rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #fecdd3;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .combined-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .combined-table th {
+            background-color: #f43f5e;
+            color: #ffffff;
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .combined-table td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #fecdd3;
+            vertical-align: top;
+            color: #2d3748;
+        }
+
+        .combined-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(180deg, #fef2f2 0%, #fff1f2 50%, #fef2f2 100%);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #fb7185 0%, #f43f5e 50%, #e11d48 100%);
+            border-radius: 10px;
+            border: 2px solid #fef2f2;
+            transition: all 0.3s ease;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #f43f5e 0%, #e11d48 50%, #be123c 100%);
+            border-color: #ffe4e6;
+        }
+        
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #f43f5e #fef2f2;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+                margin: 1.5rem 0 1rem;
+            }
+
+            .section {
+                padding: 1.2rem;
+            }
+
+            .combined-table th,
+            .combined-table td {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .external-button {
+                top: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        a {
+            color: #f43f5e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="external-button" target="_blank">•</a>
+
+    <div class="container">
+        <h1>Человеческие расы: происхождение, характеристика и единство</h1>
+
+        <div class="section">
+            <p><strong>Человеческая раса</strong> — это исторически сложившаяся группа людей, объединённая общностью происхождения, которая выражается в общих наследственных морфологических и физиологических признаках. Важно отметить, что все расы принадлежат к одному виду — <em>Homo sapiens</em> (Человек разумный) — и полностью равны в биологическом и интеллектуальном отношении.</p>
+        </div>
+
+        <div class="section">
+            <h2>Происхождение рас</h2>
+            <p>Формирование человеческих рас началось в эпоху верхнего палеолита (около 40–30 тысяч лет назад). Основным фактором расогенеза (процесса возникновения и становления человеческих рас) была адаптация популяций людей к различным природно-климатическим условиям. Длительная изоляция групп людей на разных континентах способствовала закреплению определённых наследственных признаков.</p>
+        </div>
+
+        <div class="section">
+            <h2>Основные расы: признаки и адаптация</h2>
+            <div class="table-responsive">
+                <table class="combined-table">
+                    <thead>
+                        <tr>
+                            <th>Раса</th>
+                            <th>Характерные признаки</th>
+                            <th>Адаптивное значение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Европеоидная</td>
+                            <td>Светлая/смуглая кожа, прямые/волнистые волосы, узкий нос, тонкие губы, обильная борода/усы у мужчин.</td>
+                            <td>Узкий нос согревает холодный воздух; светлая кожа облегчает синтез витамина D в условиях недостатка УФ (север).</td>
+                        </tr>
+                        <tr>
+                            <td>Монголоидная</td>
+                            <td>Смуглая/желтоватая кожа, прямые жёсткие волосы, уплощённое лицо, выступающие скулы, узкий разрез глаз + эпикантус.</td>
+                            <td>Защита от ветров/пыли/солнца степей и пустынь; эпикантус предотвращает попадание песка в глаза.</td>
+                        </tr>
+                        <tr>
+                            <td>Негроидная (Экваториальная)</td>
+                            <td>Тёмная кожа, курчавые волосы, широкий плоский нос, толстые губы, выступающая челюсть.</td>
+                            <td>Тёмная кожа защищает от УФ; курчавые волосы охлаждают голову; широкий нос/толстые губы улучшают терморегуляцию.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Расовое единство человечества</h2>
+            <p>Современная наука доказывает биологическое единство человечества. Главным доказательством является возможность заключения межрасовых браков и рождения плодовитого потомства. Различия между расами касаются лишь второстепенных внешних признаков и не затрагивают умственные, творческие или социальные способности. Идеи расизма — антинаучны и антигуманны.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('title');
+            const originalTitle = title.textContent;
+            const letters = originalTitle.split('');
+            let currentIndex = 0;
+            let isAnimating = true;
+            let direction = 1;
+            let lastTime = 0;
+            const animationSpeed = 300;
+
+            function animateTitle(timestamp) {
+                if (!lastTime) lastTime = timestamp;
+                const delta = timestamp - lastTime;
+
+                if (delta > animationSpeed) {
+                    lastTime = timestamp;
+
+                    if (isAnimating) {
+                        if (direction === 1) {
+                            if (currentIndex < letters.length) {
+                                title.textContent = letters.slice(0, currentIndex + 1).join('');
+                                currentIndex++;
+                            } else {
+                                isAnimating = false;
+                                setTimeout(() => {
+                                    direction = -1;
+                                    isAnimating = true;
+                                }, 1000);
+                            }
+                        } else {
+                            if (currentIndex > 0) {
+                                title.textContent = letters.slice(0, currentIndex).join('');
+                                currentIndex--;
+                            } else {
+                                isAnimating = false;
+                                setTimeout(() => {
+                                    direction = 1;
+                                    isAnimating = true;
+                                }, 1000);
+                            }
+                        }
+                    }
+                }
+
+                requestAnimationFrame(animateTitle);
+            }
+
+            requestAnimationFrame(animateTitle);
+        });
+    </script>
+</body>
+</html>
