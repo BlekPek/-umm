@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qcf</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/umm.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/umm1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/umm2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="data:application/manifest+json,{}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(180deg, #fef2f2 0%, #fff1f2 50%, #fef2f2 100%);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #fb7185 0%, #f43f5e 50%, #e11d48 100%);
+            border-radius: 10px;
+            border: 2px solid #fef2f2;
+            transition: all 0.3s ease;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #f43f5e 0%, #e11d48 50%, #be123c 100%);
+            border-color: #ffe4e6;
+        }
+        
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #f43f5e #fef2f2;
+        }
+        
+        .search-row {
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .search-row:hover {
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.08);
+            border-color: #fda4af;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.4s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .aspect-custom {
+            position: relative;
+            width: 100%;
+            padding-bottom: 58.088%;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 2720px;
+            margin: 0 auto;
+        }
+        
+        .aspect-custom img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .header-container {
+            max-width: 42rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col">
+    <header class="w-full py-8 bg-gradient-to-b from-rose-50 to-white">
+        <div class="header-container">
+            <div class="aspect-custom slide-in">
+                <img src="1013.gif" 
+                     alt="Анимированный заголовок"
+                     width="2720"
+                     height="1580">
+            </div>
+        </div>
+    </header>
+
+    <section class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="relative mb-8 slide-in">
+            <input type="text" 
+                   id="searchInput" 
+                   placeholder="Поиск..." 
+                   autocomplete="off"
+                   class="w-full px-6 py-4 rounded-xl border-2 border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 transition-all duration-300 text-lg shadow-lg">
+            <i data-feather="search" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+        </div>
+
+        <div id="resultsContainer">
+            <div class="search-row bg-white rounded-xl p-6 shadow-md border border-gray-100 fade-in cursor-pointer"
+                 onclick="location.href='https://example.com/item3'">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <h3 class="font-semibold text-gray-800 text-lg">Стратегии роста бизнеса</h3>
+                        <p class="text-sm text-gray-600">Изучите эффективные методы расширения бизнеса</p>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-sm text-gray-500"><i data-feather="calendar" class="w-4 h-4 inline mr-2"></i>10 марта 2024</p>
+                        <p class="text-sm text-gray-500"><i data-feather="tag" class="w-4 h-4 inline mr-2"></i>Бизнес</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadMoreContainer" class="mt-6 text-center">
+            <button id="loadMore" class="px-6 py-3 bg-rose-500 text-white rounded-lg hover:bg-rose-600 transition-colors duration-300">
+                Показать еще
+            </button>
+        </div>
+
+        <div id="noResults" class="hidden text-center py-12 fade-in">
+            <i data-feather="search" class="w-16 h-16 text-gray-300 mx-auto mb-4"></i>
+            <h3 class="text-xl font-semibold text-gray-500 mb-2">Ничего не найдено</h3>
+            <p class="text-gray-400">Попробуйте другие ключевые слова или проверьте правописание</p>
+        </div>
+    </section>
+ 
+    <footer class="bg-gray-50 border-t border-gray-200 mt-auto py-8 slide-in">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-600">&copy; qcf</p>
+            <div class="flex justify-center space-x-4 mt-4">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+        
+        const sampleData = [
+            {
+                title: "Человеческие расы: происхождение, характеристика и единство",
+                description: "nah",
+                date: "Mon 13 Oct",
+                category: "Биология",
+                link: "bb1.html"
+            }
+        ];
+
+        let displayedItems = 3;
+        let currentData = [...sampleData];
+        let isSearching = false;
+        
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const resultsContainer = document.getElementById('resultsContainer');
+            const noResults = document.getElementById('noResults');
+            const loadMoreContainer = document.getElementById('loadMoreContainer');
+            
+            if (searchTerm.length === 0) {
+                currentData = [...sampleData];
+                displayedItems = 3;
+                isSearching = false;
+                loadMoreContainer.classList.remove('hidden');
+                renderResults();
+                noResults.classList.add('hidden');
+                return;
+            }
+            
+            isSearching = true;
+            loadMoreContainer.classList.add('hidden');
+            
+            const filteredData = sampleData.filter(item => 
+                item.title.toLowerCase().includes(searchTerm) ||
+                item.description.toLowerCase().includes(searchTerm) ||
+                item.category.toLowerCase().includes(searchTerm)
+            );
+            
+            currentData = filteredData;
+            displayedItems = filteredData.length;
+            
+            if (filteredData.length === 0) {
+                resultsContainer.innerHTML = '';
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                renderResults();
+            }
+        });
+
+        document.getElementById('loadMore').addEventListener('click', function() {
+            displayedItems = Math.min(displayedItems + 3, currentData.length);
+            renderResults();
+            
+            if (displayedItems >= currentData.length) {
+                document.getElementById('loadMoreContainer').classList.add('hidden');
+            }
+        });
+
+        function renderResults() {
+            const resultsContainer = document.getElementById('resultsContainer');
+            const itemsToShow = currentData.slice(0, displayedItems);
+            
+            resultsContainer.innerHTML = itemsToShow.map(item => `
+                <div class="search-row bg-white rounded-xl p-6 shadow-md border border-gray-100 fade-in cursor-pointer mb-4"
+                     onclick="location.href='${item.link}'">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <h3 class="font-semibold text-gray-800 text-lg">${item.title}</h3>
+                            <p class="text-sm text-gray-600">${item.description}</p>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="text-sm text-gray-500"><i data-feather="calendar" class="w-4 h-4 inline mr-2"></i> ${item.date}</p>
+                            <p class="text-sm text-gray-500"><i data-feather="tag" class="w-4 h-4 inline mr-2"></i> ${item.category}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            feather.replace();
+            
+            const loadMoreContainer = document.getElementById('loadMoreContainer');
+            if (displayedItems >= currentData.length || isSearching) {
+                loadMoreContainer.classList.add('hidden');
+            } else {
+                loadMoreContainer.classList.remove('hidden');
+            }
+        }
+        
+        renderResults();
+    </script>
+    <script>
+        (function() {
+            const titleText = "qcf";
+            const symbols = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+            let currentTitle = "";
+            let step = 0;
+            let direction = 1;
+            let scrambleMode = false;
+            let scrambleCount = 0;
+            const maxScramble = 5;
+            
+            function animateTitle() {
+                if (scrambleMode) {
+                    let newTitle = "";
+                    for (let i = 0; i < titleText.length; i++) {
+                        newTitle += symbols[Math.floor(Math.random() * symbols.length)];
+                    }
+                    document.title = newTitle;
+                    scrambleCount++;
+                    
+                    if (scrambleCount >= maxScramble) {
+                        scrambleMode = false;
+                        scrambleCount = 0;
+                        currentTitle = "";
+                    }
+                } else {
+                    if (direction === 1) {
+                        if (step < titleText.length) {
+                            currentTitle += titleText[step];
+                            step++;
+                        } else {
+                            direction = -1;
+                            setTimeout(() => {
+                                scrambleMode = true;
+                            }, 1000);
+                        }
+                    } else {
+                        if (step > 0) {
+                            currentTitle = currentTitle.slice(0, -1);
+                            step--;
+                        } else {
+                            direction = 1;
+                        }
+                    }
+                    document.title = currentTitle;
+                }
+                
+                setTimeout(animateTitle, scrambleMode ? 100 : 200);
+            }
+            
+            animateTitle();
+        })();
+    </script>
+</body>
+</html>
