@@ -1,1 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qcf</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/umm.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/umm1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/umm2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #2d3748;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .external-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #f43f5e;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .external-button:hover {
+            background-color: #e11d48;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #2d3748;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #f43f5e;
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1.2rem;
+            color: #2d3748;
+            padding-left: 0.5rem;
+            border-left: 4px solid #f43f5e;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        strong {
+            color: #2d3748;
+            font-weight: 500;
+        }
+
+        em {
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        .section {
+            background-color: #fff1f2;
+            padding: 1.8rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #fecdd3;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(180deg, #fef2f2 0%, #fff1f2 50%, #fef2f2 100%);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #fb7185 0%, #f43f5e 50%, #e11d48 100%);
+            border-radius: 10px;
+            border: 2px solid #fef2f2;
+            transition: all 0.3s ease;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #f43f5e 0%, #e11d48 50%, #be123c 100%);
+            border-color: #ffe4e6;
+        }
+        
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #f43f5e #fef2f2;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+                margin: 1.5rem 0 1rem;
+            }
+
+            .section {
+                padding: 1.2rem;
+            }
+            
+            .external-button {
+                top: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        a {
+            color: #f43f5e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="external-button">•</a>
+
+    <div class="container">
+        <h1>МДК 02.01</h1>
+
+        <div class="section">
+            <p>В РФ принята планово предупредительная система т.о автомобиля.</p>
+            <p>Автомобиль как и все промышленные изделия имеют ряд эксплуатационных характеристик, важнейшими из которых являются качество и надёжность.</p>
+            <p><strong>Качество</strong> - отражает эксплуатационные показатели, такие как макс. скорость, расход топлива, надёжность, долговечность, безотказность и ремонтопригодность.</p>
+            <p><strong>Надёжностью автомобиля</strong> называются его свойства сохранять в определённый период времени все значения и параметры, заложенные заводом изготовителем.</p>
+            <p><strong>Безотказность</strong> - свойство автомобиля сохранять работоспособность состояния в определённый период времени или пробега.</p>
+            <p><strong>Исправным</strong> называется состояние автомобиля, в котором соответствует всем требованиям тех. состояния ПДД и может эксплуатироваться без ограничений.</p>
+            <p><strong>Неисправным</strong> считается автомобиль, состояние которого не соответствует требованиям ПДД и требованиям тех. показателям.</p>
+            <p><strong>Изнашивание</strong> - это процесс постепенного изменения размера деталей, при котором изменяются формы их и сост. не всей детали, а только её рабочей поверхности.</p>
+            <p>Процесс изменения всех видов изнашивания можно разбить на 3 периода.</p>
+            <ul>
+                <li>1 период связан с приработкой сопряжений деталей. Этот период характеризуется довольно быстрым состоянием износа, так как происходит сглаживание микрошероховатостей поверхности деталей этот период называется обкаткой.</li>
+                <li>2 период - период нормальной эксплуатации автомобиля, длительный по времени, характеризуется малой скоростью нарастания износа деталей и называется периодом естественного изнашивания.</li>
+                <li>3 период работы сопряжения деталей в агрегатах называется периодом аварийного изнашивания.</li>
+            </ul>
+            <p><strong>Диагностика</strong> - это операция определения неисправностей без разборки агрегата, механизма или узла.</p>
+            <p><strong>Виды диагностики:</strong></p>
+            <ul>
+                <li>Визуальная (глазами, руками, ногами, на нос и т.д.)</li>
+                <li>Приборами (компрессометр, мультиметр, для опред. давления, щупы и т.д.)</li>
+                <li>Электронная (сканер ошибок, осциллограф)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Билет №1. Причины и закономерности неисправности деталей автомобиля.</h2>
+            <p>Cмотри мдк 01.02)</p>
+        </div>
+
+        <div class="section">
+            <h2>Билет №2. Техническое обслуживание, виды ТО.</h2>
+            <p><strong>Виды ТО:</strong></p>
+            <ul>
+                <li>Ежедневное обслуживание (ЕО)</li>
+                <li>Через каждые 4000 км пробега (не менее) ТО-1.</li>
+                <li>Через каждые 16000 км ТО-2.</li>
+                <li>Сезонное обслуживание (СО)</li>
+            </ul>
+            <p>Новый автомобиль ставят на гарантийное ТО.</p>
+            <p>Существует 5 классов дорог (категорий):</p>
+            <ul>
+                <li>1) Это ровные дороги с асфальтобетонным или гравийным покрытием. Для них применяется коэффициент 1,0.</li>
+                <li>2) Деревенские дороги (гравий, грунт). Коэффициент корректирования периодичности ТО = 0,9.</li>
+                <li>3) Полевые дороги, горная местность. Коэфф. коррект. 0,8.</li>
+                <li>4) Зимники и т.д. Коэфф. 0,7.</li>
+                <li>5) Карьеры. Коэфф. 0,6.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Билет №3. Смотри МДК 03.02. №1</h2>
+        </div>
+
+        <div class="section">
+            <h2>Билет №4. Виды и периодичность ТО автомобиля</h2>
+            <ul>
+                <li>Ежедневное или ежесменное обслуживание (ЕО)</li>
+                <li>Через каждые 2, 3, 4 тысячи пробега ТО-1</li>
+                <li>Через каждые 14-16 тыс. ТО-2.</li>
+            </ul>
+            <p>Сезонное обслуживание - его проводят вместе с ТО-2.</p>
+            <p>ЕО - выполняется до и после окончания автомобиля.</p>
+            <p>ТО-1 - делаем работы ЕО, также диагностику, регулировку и смазку.</p>
+            <p>ТО-2 - работы ЕО, ТО-1 + крепёжные работы.</p>
+            <p>СО - делают 2 раза в год.</p>
+        </div>
+
+        <div class="section">
+            <h2>Билет №5. Техническое обслуживание КШМ</h2>
+            <p>КШМ в основном диагностируют и ремонтируют.</p>
+        </div>
+
+        <div class="section">
+            <h2>Билет №6. Техническое обслуживание системы охлаждения</h2>
+            <p>Визуально производим внешний осмотр жидкостного насоса, приводных ремней, наличие жидкостей в расширительном бачке, проверяем состояние радиатора.</p>
+            <p>При необходимости подтяжку ремня приводного насоса.</p>
+        </div>
+
+        <div class="section">
+            <h2>Билет №7. Техническое обслуживание системы смазки</h2>
+            <ul>
+                <li>Смотрим и устраняем течи масла (прокладка крышки клапанов - замена, если поможет используем герметики)</li>
+                <li>Течь масла через сальники (замена - ремонт)</li>
+                <li>Замена масла. Масло применяем по рекомендации завода изготовителя.</li>
+            </ul>
+            <p>После замены масла и масляного фильтра необходимо проверить давления масла в двигателе, так как в масляном фильтре может быть неисправен клапан, и необходимо проверить на герметичность масляный фильтр.</p>
+            <p>Масло нужно приобретать в серьёзных торговых точках.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('title');
+            const originalTitle = title.textContent;
+            const letters = originalTitle.split('');
+            let currentIndex = 0;
+            let isAnimating = true;
+            let direction = 1;
+            let lastTime = 0;
+            const animationSpeed = 300;
+
+            function animateTitle(timestamp) {
+                if (!lastTime) lastTime = timestamp;
+                const delta = timestamp - lastTime;
+
+                if (delta > animationSpeed) {
+                    lastTime = timestamp;
+
+                    if (isAnimating) {
+                        if (direction === 1) {
+                            if (currentIndex < letters.length) {
+                                title.textContent = letters.slice(0, currentIndex + 1).join('');
+                                currentIndex++;
+                            } else {
+                                isAnimating = false;
+                                setTimeout(() => {
+                                    direction = -1;
+                                    isAnimating = true;
+                                }, 1000);
+                            }
+                        } else {
+                            if (currentIndex > 0) {
+                                title.textContent = letters.slice(0, currentIndex).join('');
+                                currentIndex--;
+                            } else {
+                                isAnimating = false;
+                                setTimeout(() => {
+                                    direction = 1;
+                                    isAnimating = true;
+                                }, 1000);
+                            }
+                        }
+                    }
+                }
+
+                requestAnimationFrame(animateTitle);
+            }
+
+            requestAnimationFrame(animateTitle);
+        });
+    </script>
+</body>
+</html>
